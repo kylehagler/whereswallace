@@ -1,0 +1,11 @@
+html, body {
+	margin: 0;
+}
+
+#board {
+	cursor: url(../img/camera.png) 32 32, auto;
+}
+
+li.active-character {
+	color: green;
+}
