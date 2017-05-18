@@ -4,34 +4,68 @@ import { selectCharacter } from '../actions/index';
 import { bindActionCreators } from 'redux';
 
 class CharacterList extends Component {
-	renderList() {
-		return this.props.characters.map((character) => {
+	renderList(start, end) {
+		return this.props.characters.map((character, index) => {
 			
 			var myClass = null;
 			
-			if(this.props.activeCharacter) {
-				if(this.props.activeCharacter.name === character.name) {
-					myClass = 'active-character';
-				}
+			if(index >= start && index <= end) {
+				if(this.props.activeCharacter) {
+					if(this.props.activeCharacter.name === character.name) {	
+						myClass = 'active-character';	
+					} else if(character.found) {
+						myClass = 'found-character';
+					}
+				}	
+			
+				return (
+					<li 
+						key={character.id}
+						onClick={() => this.props.selectCharacter(character)}
+						className={myClass}
+						id={character.id}
+					>
+					{character.name}
+					</li>	
+				);
 			}
 			
-			return (
-				<li 
-					key={character.id}
-					onClick={() => this.props.selectCharacter(character)}
-					className={myClass}
-				>
-				{character.name}
-				</li>	
-			);
 		});
 	}
 	
 	render() {
 		return (
-			<ul className="character-list">
-				{this.renderList()}
-			</ul>	
+			<div className="characters">			
+				<div className="container">
+					<div className="columns">
+					  <div className="column">
+					    <ul className="character-list">
+							{this.renderList(0, 10)}
+						</ul>
+					  </div>
+					  <div className="column">
+					    <ul className="character-list">
+							{this.renderList(11, 21)}
+						</ul>
+					  </div>
+					  <div className="column">
+					    <ul className="character-list">
+							{this.renderList(22, 32)}
+						</ul>
+					  </div>
+					  <div className="column">
+					    <ul className="character-list">
+							{this.renderList(33, 43)}
+						</ul>
+					  </div>
+					  <div className="column">
+					    <ul className="character-list">
+							{this.renderList(44, 46)}
+						</ul>
+					  </div>
+					</div>
+				</div>
+			</div>	
 		);
 	}
 }

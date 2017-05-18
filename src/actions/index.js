@@ -6,11 +6,12 @@ export function selectCharacter(character) {
 	};
 }
 
-export function boardClicked(event) {
-	console.log(event.target.id);
-	
+export function boardClicked(event, activeCharacter) {
 	return {
 		type: 'BOARD_CLICKED',
-		payload: event.target.id
+		payload: {
+			"id": event.target.id,
+			"activeCharacter": activeCharacter.id
+		}
 	};
 }

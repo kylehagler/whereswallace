@@ -1,11 +1,83 @@
+@font-face {
+    font-family: 'DIN OT';
+    src: url(DINOT-Black.ttf);
+}
+
 html, body {
 	margin: 0;
+}
+
+body {
+	border: 4px solid #a9d582;
 }
 
 #board {
 	cursor: url(../img/camera.png) 32 32, auto;
 }
 
+ul.character-list {
+	color: #fff;
+	font-family: 'DIN OT';
+	text-transform: uppercase;
+	text-align: center;
+}
+
+ul.character-list li {
+	margin-bottom: 8px;
+	cursor: pointer;
+}
+
 li.active-character {
-	color: green;
+	color: #00ec16;
+}
+
+li.found-character {
+	color: #444;
+}
+
+
+
+div.characters {
+	background: #6a6b63;
+	margin-top: -6px;
+	border-top: 4px solid #5b5c54;
+	padding: 20px 0 12px;
+}
+
+div.active-box {
+	position: absolute; 
+	top: 108px;
+	right: 20px;
+	
+}
+
+div.active-image {
+	background: rgba(0,0,0,0.45);
+	padding: 5px;
+	width: 80px;
+	height: 76px;
+	margin: 0 auto;
+	border: 2px solid #747166;
+	border-bottom: none;
+	position: relative;
+	z-index: 2;
+}
+
+div.active-image img {
+	width: 70px;
+}
+
+div.active-name {
+	background: rgba(0,0,0,0.4);
+	color: #fff;
+	font-family: 'DIN OT';
+	text-transform: uppercase;
+	font-size: 18px;
+	padding: 4px 12px;
+	border: 2px solid #747166;
+	text-align: center;
+	margin-top: -2px;
+	position: relative;
+	z-index: 1;
+	min-width: 100px;
 }

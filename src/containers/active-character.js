@@ -2,15 +2,16 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 class ActiveCharacter extends Component {
-	render() {
-		if(!this.props.character) {
-			return <div>Select a character to get started!</div>;
-		}
-		
+	render() {		
 		return (
-			<div>
-				{this.props.character.name}
-			</div>	
+			<div className="active-box">
+				<div className="active-image">
+					<img src={this.props.character.avatar} />
+				</div>
+				<div className="active-name">
+					{this.props.character.name}
+				</div>	
+			</div>
 		);
 	}
 }
