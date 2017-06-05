@@ -8,8 +8,10 @@ export default class App extends Component {
   render() {
     return (
       <div>
-      	<ActiveCharacter />
-      	<Board />
+      	<div className="illustration-container">
+      		<ActiveCharacter />
+      		<Board />
+      	</div>
       	<CharacterList />
       </div>
     );

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { selectCharacter } from '../actions/index';
 import { bindActionCreators } from 'redux';
+import ActiveCharacter from './active-character';
 
 class CharacterList extends Component {
 	renderList(start, end) {
@@ -21,7 +22,7 @@ class CharacterList extends Component {
 				return (
 					<li 
 						key={character.id}
-						onClick={() => this.props.selectCharacter(character)}
+						// onClick={() => this.props.selectCharacter(character)}
 						className={myClass}
 						id={character.id}
 					>
@@ -35,7 +36,8 @@ class CharacterList extends Component {
 	
 	render() {
 		return (
-			<div className="characters">			
+			<div className="characters">
+				<ActiveCharacter />			
 				<div className="container">
 					<div className="columns">
 					  <div className="column">
@@ -65,6 +67,13 @@ class CharacterList extends Component {
 					  </div>
 					</div>
 				</div>
+				
+				<div className="copy">
+					<p>Concept by <a href="https://theringer.com/@shea.sherrano" target="_blank">Shea Serrano</a>, Illustration by <a href="https://www.brennathummler.com/" target="_blank">Brenna Thummler</a></p>
+					<p>&copy; 2017 <a href="https://theringer.com" target="_blank">The Ringer</a></p>
+				</div>
+				
+				<div className="counter">{this.props.activeCharacter.index}/47</div>
 			</div>	
 		);
 	}

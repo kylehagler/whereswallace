@@ -15,6 +15,61 @@ body {
 	cursor: url(../img/camera.png) 32 32, auto;
 }
 
+#start-box {
+	background: #6b6c64;
+}
+
+.modal-background {
+	background: rgba(0,0,0,0.98);
+}
+
+.modal-card, .modal-card-body {
+	overflow: visible;
+}
+
+#wallace-logo {
+	width: 220px;
+	margin-top: -150px;
+	margin-bottom: 20px;
+}
+
+.modal .button {
+	background: #197b30;
+	border: 1px solid #a9d582;
+	color: #fff;
+	font-family: 'DIN OT';
+	text-transform: uppercase;
+	margin: 0 auto;
+}
+
+.modal .button:hover {
+	background: #fff;
+	color: #197b30;
+}
+
+.modal-card {
+	border: 4px solid #5c5d57;	
+}
+
+.modal-card-body {
+	background: #6b6c64;
+	color: #fff;
+	text-align: center;
+	font-family: 'DIN OT';
+	text-transform: uppercase;
+}
+
+.modal-card-foot {
+	background: #6b6c64;
+	border-top: none;
+	border-radius: 0;
+	padding-top: 0;
+}
+
+.illustration-container {
+	position: relative;
+}
+
 ul.character-list {
 	color: #fff;
 	font-family: 'DIN OT';
@@ -24,7 +79,6 @@ ul.character-list {
 
 ul.character-list li {
 	margin-bottom: 8px;
-	cursor: pointer;
 }
 
 li.active-character {
@@ -33,26 +87,64 @@ li.active-character {
 
 li.found-character {
 	color: #444;
+	cursor: auto !important;
 }
 
+.banner {
+	position: relative;
+}
 
+img#banner-image {
+	width: 100%;
+	max-height: 130px;
+}
+
+img#ringer-logo {
+	position: absolute;
+	top: 50%;
+	right: 20px;
+	width: 50px;
+	margin-top: -30px;
+}
 
 div.characters {
 	background: #6a6b63;
 	margin-top: -6px;
 	border-top: 4px solid #5b5c54;
 	padding: 20px 0 12px;
+	position: relative;
 }
 
-div.active-box {
-	position: absolute; 
-	top: 108px;
+div#active-box {
+	position: fixed; 
+	top: 102px;
+	right: 15px;
+}
+
+div.characters div#active-box {
+	position: static;
+	display: none;
+}
+
+div#active-box.scrolling {
+	top: 15px;
+}
+
+div.counter {
+	position: absolute;
+	bottom: 20px;
 	right: 20px;
-	
+	background: #197b30;
+	color: #fff;
+	font-family: 'DIN OT';
+	padding: 5px 10px;
+	border-radius: 2px;
+	border: 1px solid #a9d582;
+	font-size: 20px;
 }
 
 div.active-image {
-	background: rgba(0,0,0,0.45);
+	background: rgba(0,0,0,0.55);
 	padding: 5px;
 	width: 80px;
 	height: 76px;
@@ -68,11 +160,11 @@ div.active-image img {
 }
 
 div.active-name {
-	background: rgba(0,0,0,0.4);
+	background: rgba(0,0,0,0.55);
 	color: #fff;
 	font-family: 'DIN OT';
 	text-transform: uppercase;
-	font-size: 18px;
+	font-size: 16px;
 	padding: 4px 12px;
 	border: 2px solid #747166;
 	text-align: center;
@@ -81,3 +173,78 @@ div.active-name {
 	z-index: 1;
 	min-width: 100px;
 }
+
+.copy {
+	text-align: center;
+	margin-top: 60px;
+	margin-bottom: 2px;
+	color: #fff;
+	font-weight: bold;
+	font-size: 13px;
+}
+
+.copy a {
+	color: #00ec16;
+}
+
+.share-buttons {
+	padding-top: 20px;
+	
+}
+
+.share-buttons a {
+	color: #6b6c64;
+}
+
+.fb_iframe_widget {
+	top: -6px;
+}
+
+@media (max-width: 767px) {
+	div#active-box {
+		display: none;
+	}
+	
+	div.characters div#active-box {
+		display: block;
+		margin-bottom: 15px;
+	}
+	
+	div.characters div#active-box .active-name {
+		display: none;
+	}
+	
+	div.characters div#active-box .active-image {
+		height: 83px;
+		border-bottom: 2px solid #747166;
+	}
+	
+	#wallace-logo {
+		margin-top: -40px;
+		margin-bottom: 10px;
+		width: 100px;
+	}
+	
+	.modal-card-body p, .modal .button {
+		font-size: 10px;
+	}
+	
+	.modal-card-body, .share-buttons {
+		padding-bottom: 5px;
+	}
+}
+
+@media (max-width: 768px) {
+	img#ringer-logo {
+		width: 30px;
+		margin-top: -20px;
+	}
+}
+
+@media (max-width: 415px) {
+	img#ringer-logo {
+		width: 16px;
+		margin-top: -12px;
+	}
+}
+

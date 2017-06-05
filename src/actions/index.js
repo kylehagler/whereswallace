@@ -1,4 +1,8 @@
 export function selectCharacter(character) {
+	if(character.found) {
+		return;
+	}
+	
 	// Action creator; needs to return an action (an object with a type property)
 	return {
 		type: 'CHARACTER_ACTIVATED',

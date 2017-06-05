@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 class ActiveCharacter extends Component {
 	render() {		
 		return (
-			<div className="active-box">
+			<div id="active-box">
 				<div className="active-image">
 					<img src={this.props.character.avatar} />
 				</div>
